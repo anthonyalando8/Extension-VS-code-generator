@@ -1,0 +1,70 @@
+{
+  "name": "codereview",
+  "displayName": "CodeReview",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codereview.helloWorld",
+        "title": "Review Code"
+      },
+      {
+        "command": "codereview.generateButtonStyle",
+        "title": "Flutter Theme Agent: Create a Flutter ButtonStyle."
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Flutter Theme Agent: Google AI",
+        "properties": {
+          "google.ai.apiKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": "AIzaSyCOeQQMrsEc6mB1GQK3lJHV85dAd7U3Who",
+            "markdownDescription": "Enter your [API Key](https://ai.google.dev/tutorials/setup) for Google AI."
+          },
+          "google.ai.model": {
+            "type": [
+              "string"
+            ],
+            "default": "gemini-pro",
+            "markdownDescription": "Provide the name of the Google AI model you want to use. Choose from the [base models](https://ai.google.dev/models)."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.88.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.5.0"
+  }
+}
