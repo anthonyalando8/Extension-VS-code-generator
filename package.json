@@ -31,7 +31,7 @@
               "string",
               "null"
             ],
-            "default": "AIzaSyCOeQQMrsEc6mB1GQK3lJHV85dAd7U3Who",
+            "default": "API KEY",
             "markdownDescription": "Enter your [API Key](https://ai.google.dev/tutorials/setup) for Google AI."
           },
           "google.ai.model": {
